@@ -10,9 +10,19 @@ Future<void> _messageHandler(RemoteMessage message) async {
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
+  try {
+    if (Firebase.apps.isEmpty) {
+      await Firebase.initializeApp(
+        options: DefaultFirebaseOptions.currentPlatform,
+      );
+    }
+  } catch (e) {
+    if (e.toString().contains('duplicate-app')) {
+      print('Firebase already initialized');
+    } else {
+      rethrow;
+    }
+  }
   FirebaseMessaging.onBackgroundMessage(_messageHandler);
   runApp(const MessagingTutorial());
 }
@@ -46,6 +56,7 @@ class _MyHomePageState extends State<MyHomePage> {
   late FirebaseMessaging messaging;
   String? notificationText;
   String? fcmToken;
+  String? errorMessage;
 
   @override
   void initState() {
@@ -63,6 +74,13 @@ class _MyHomePageState extends State<MyHomePage> {
       print('FCM Token: $value');
       setState(() {
         fcmToken = value;
+        errorMessage = null;
+      });
+    }).catchError((error) {
+      print('Error getting FCM token: $error');
+      setState(() {
+        errorMessage = 'Failed to get FCM token. Google Play Services is required. Please use an emulator with Google Play or a physical device.';
+        fcmToken = null;
       });
     });
 
@@ -262,6 +280,33 @@ class _MyHomePageState extends State<MyHomePage> {
                       fontFamily: 'monospace',
                     ),
                     textAlign: TextAlign.center,
+                  ),
+                )
+              else if (errorMessage != null)
+                Container(
+                  padding: const EdgeInsets.all(16),
+                  decoration: BoxDecoration(
+                    color: Colors.red.shade50,
+                    borderRadius: BorderRadius.circular(8),
+                    border: Border.all(color: Colors.red.shade200),
+                  ),
+                  child: Column(
+                    children: [
+                      const Icon(
+                        Icons.error_outline,
+                        color: Colors.red,
+                        size: 32,
+                      ),
+                      const SizedBox(height: 8),
+                      Text(
+                        errorMessage!,
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(
+                          color: Colors.red,
+                          fontSize: 14,
+                        ),
+                      ),
+                    ],
                   ),
                 )
               else

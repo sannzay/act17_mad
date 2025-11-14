@@ -38,19 +38,19 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'YOUR_ANDROID_API_KEY',
-    appId: 'YOUR_ANDROID_APP_ID',
-    messagingSenderId: 'YOUR_MESSAGING_SENDER_ID',
-    projectId: 'YOUR_PROJECT_ID',
-    storageBucket: 'YOUR_STORAGE_BUCKET',
+    apiKey: 'AIzaSyCkc8VTNQBwnHVIE8ITEbbyEcrFmnuk2uw',
+    appId: '1:324085161158:android:2cffbfbd7e37b91a8c8bc7',
+    messagingSenderId: '324085161158',
+    projectId: 'act17-mad',
+    storageBucket: 'act17-mad.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'YOUR_IOS_API_KEY',
-    appId: 'YOUR_IOS_APP_ID',
-    messagingSenderId: 'YOUR_MESSAGING_SENDER_ID',
-    projectId: 'YOUR_PROJECT_ID',
-    storageBucket: 'YOUR_STORAGE_BUCKET',
-    iosBundleId: 'YOUR_IOS_BUNDLE_ID',
+    apiKey: 'AIzaSyBdLmbwXW6sBa_JeG84upA3FwWSBDD4UJg',
+    appId: '1:324085161158:ios:4ec00089d334e4a78c8bc7',
+    messagingSenderId: '324085161158',
+    projectId: 'act17-mad',
+    storageBucket: 'act17-mad.firebasestorage.app',
+    iosBundleId: 'com.example.act17Mad',
   );
 }
