@@ -4,12 +4,21 @@ Flutter app implementing Firebase Cloud Messaging (FCM) with custom notification
 
 ## Screenshots
 
-### Regular Notification
-![Regular Notification](screenshots/regular_notification.png)
-
-Daily Inspiration notification with Regular type (grey theme).
-
-### Important Notification
-![Important Notification](screenshots/important_notification.png)
-
-Urgent Motivation notification with Important type (red theme).
+<table>
+  <tr>
+    <td>
+      <img src="screenshots/regular_notification.png" alt="Regular Notification" width="300"/>
+      <br/>
+      <strong>Regular Notification</strong>
+      <br/>
+      Daily Inspiration (grey theme)
+    </td>
+    <td>
+      <img src="screenshots/important_notification.png" alt="Important Notification" width="300"/>
+      <br/>
+      <strong>Important Notification</strong>
+      <br/>
+      Urgent Motivation (red theme)
+    </td>
+  </tr>
+</table>
