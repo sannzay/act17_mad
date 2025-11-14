@@ -1,16 +1,15 @@
-# act17_mad
+# Activity 17: Firebase Cloud Messaging
 
-A new Flutter project.
+Flutter app implementing Firebase Cloud Messaging (FCM) with custom notification types and themed displays.
 
-## Getting Started
+## Screenshots
 
-This project is a starting point for a Flutter application.
+### Regular Notification
+![Regular Notification](screenshots/regular_notification.png)
 
-A few resources to get you started if this is your first Flutter project:
+Daily Inspiration notification with Regular type (grey theme).
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Important Notification
+![Important Notification](screenshots/important_notification.png)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Urgent Motivation notification with Important type (red theme).
